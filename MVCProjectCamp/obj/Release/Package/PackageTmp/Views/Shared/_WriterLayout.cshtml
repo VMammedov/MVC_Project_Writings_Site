@@ -1,0 +1,73 @@
+﻿@using MVCProjectCamp.Models
+
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Sidebar 09</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/WriterPanelTemplate/css/style.css">
+    <link rel="stylesheet" href="~/AdminLTE-3.0.4/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="~/AdminLTE-3.0.4/plugins/fontawesome-free/css/all.min.css">
+</head>
+<body>
+    <div class="wrapper d-flex align-items-stretch">
+        <nav id="sidebar">
+            <div class="custom-menu">
+                <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                </button>
+            </div>
+            <div class="img bg-wrap text-center py-4" style="background-image: url(/WriterPanelTemplate/images/bg_1.jpg);">
+                <div class="user-logo">
+                    <div class="img" style="background-image: url(@WriterInfo.ImageURL);"></div>
+                    <h3>@WriterInfo.Name @WriterInfo.SurName</h3>
+                </div>
+            </div>
+            <ul class="list-unstyled components mb-5">
+                <li class="active">
+                    <a href="/Default/Headings"><span class="fa fa-home mr-3"></span>Writings</a>
+                </li>
+                <li>
+                    <a href="/WriterPanel/WriterProfile"><span class="fa fa-user mr-3 notif"></span>My Profile</a>
+                </li>
+                <li>
+                    <a href="/WriterPanel/MyHeading"><span class="fa fa-th mr-3"></span>My Headings</a>
+                </li>
+                <li>
+                    <a href="/WriterPanel/AllHeadings"><span class="fa fa-list mr-3"></span>All Headings</a>
+                </li>
+                <li>
+                    <a href="/WriterPanelContent/MyContent"><span class="fa fa-file-word mr-3"></span>My Writings</a>
+                </li>
+                <li>
+                    <a href="/WriterPanelMessage/Inbox/"><span class="fa fa-envelope mr-3 notif"></span>Messages</a>
+                </li>
+                <li>
+                    <a href="/Home/HomePage/"><span class="fa fa-home mr-3"></span>Go to Home Site</a>
+                </li>
+                <li>
+                    <a href="/Login/WriterLogOut/"><span class="fa fa-sign-out-alt mr-3"></span> Sign Out</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5 pt-5">
+            @RenderBody()
+        </div>
+        @RenderSection("Scripts", false)
+    </div>
+</body>
+</html>
+<script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
+<script src="~/AdminLTE-3.0.4/dist/js/adminlte.min.js"></script>
+<script src="~/WriterPanelTemplate/js/jquery.min.js"></script>
+<script src="~/WriterPanelTemplate/js/popper.js"></script>
+<script src="~/WriterPanelTemplate/js/bootstrap.min.js"></script>
+<script src="~/WriterPanelTemplate/js/main.js"></script>

@@ -1,0 +1,47 @@
+﻿<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+<button class="btn btn-primary" data-toggle="modal" data-target="#Modal1">
+    New About Input
+</button>
+
+<div class="modal fade" id="Modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">About Input</h2>
+            </div>
+            <form method="post" action="/About/AddAbout/">
+                <div class="modal-body">
+                    <label>About Text 1</label>
+                    <input type="text" name="AboutDetails1" class="form-control" />
+                    <br />
+                    <label>About Text 2</label>
+                    <input type="text" name="AboutDetails2" class="form-control" />
+                    <br />
+                    <label>About Image 1</label>
+                    <input type="text" name="AboutImage1" class="form-control" />
+                    <br />
+                    <label>About Image 2</label>
+                    <input type="text" name="AboutImage2" class="form-control" />
+                    <br />
+                    <button class="btn btn-info">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- JS code -->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js">
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js">
+</script>
+<!--JS below-->
+<script>
+    $(document).ready(function () {
+        $("#myModal").modal();
+    });
+</script>

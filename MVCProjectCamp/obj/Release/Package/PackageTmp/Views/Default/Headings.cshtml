@@ -1,0 +1,49 @@
+﻿@using EntityLayer.Concrete
+@model List<Heading>
+
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Sidebar 09</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/WriterPanelTemplate/css/style.css">
+</head>
+<body>
+    <div class="wrapper d-flex align-items-stretch">
+        <nav id="sidebar" style="background-color:white">
+            <div class="custom-menu" style="background-color:white">
+                <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                </button>
+            </div>
+            <div class="img bg-wrap text-center" style="margin-top:10px">
+                    <h3 style="color:dimgray; background-color:white">Headings</h3>
+            </div>
+            <ul class="list-unstyled components mb-5">
+                @foreach (var item in Model)
+                {
+                    <li>
+                        <a style="color:black; border-radius:1rem; margin:5px; box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);" href="/Default/Headings/@item.HeadingID">@item.HeadingName</a>
+                    </li>
+                }
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5 pt-5">
+            @Html.Action("Index","Default")
+        </div>
+        
+    </div>
+</body>
+</html>
+<script src="~/WriterPanelTemplate/js/jquery.min.js"></script>
+<script src="~/WriterPanelTemplate/js/popper.js"></script>
+<script src="~/WriterPanelTemplate/js/bootstrap.min.js"></script>
+<script src="~/WriterPanelTemplate/js/main.js"></script>

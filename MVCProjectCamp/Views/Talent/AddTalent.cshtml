@@ -1,0 +1,108 @@
+﻿@model EntityLayer.Concrete.Talent
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Skills</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&amp;family=Roboto:wght@300;400;500;700&amp;display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&amp;family=Roboto:wght@300;400;500;700&amp;display=swap" media="print" onload="this.media='all'" />
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&amp;family=Roboto:wght@300;400;500;700&amp;display=swap" />
+    </noscript>
+    <link href="~/AdminLTE-3.0.4/TalentPage/css/font-awesome/css/all.min.css?ver=1.2.0" rel="stylesheet">
+    <link href="~/AdminLTE-3.0.4/TalentPage/css/bootstrap.min.css?ver=1.2.0" rel="stylesheet">
+    <link href="~/AdminLTE-3.0.4/TalentPage/css/aos.css?ver=1.2.0" rel="stylesheet">
+    <link href="~/AdminLTE-3.0.4/TalentPage/css/main.css?ver=1.2.0" rel="stylesheet">
+    <noscript>
+        <style type="text/css">
+            [data-aos] {
+                opacity: 1 !important;
+                transform: translate(0) scale(1) !important;
+            }
+        </style>
+    </noscript>
+</head>
+<body id="top">
+    <header class="d-print-none">
+        <div class="container text-center text-lg-left">
+            <div class="py-3 clearfix">
+                <h1 class="site-title mb-0">Vusal Mammadli</h1>
+                <div class="site-nav">
+                    <nav role="navigation">
+                        <ul class="nav justify-content-center">
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://twitter.com/mammedov_v" title="Twitter"><i class="fab fa-twitter"></i><span class="menu-title sr-only">Twitter</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://m.facebook.com/VMammadliV" title="Facebook"><i class="fab fa-facebook"></i><span class="menu-title sr-only">Facebook</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://www.instagram.com/_mammedov_0/" title="Instagram"><i class="fab fa-instagram"></i><span class="menu-title sr-only">Instagram</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://github.com/VMammedov" title="Github"><i class="fab fa-github"></i><span class="menu-title sr-only">Github</span></a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="page-content">
+        <div class="container">
+            <div class="cover shadow-lg bg-white">
+                <div class="cover-bg p-3 p-lg-4 text-white">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-5">
+                            <div class="avatar hover-effect bg-white shadow-sm p-1"><img src="~/AdminLTE-3.0.4/TalentPage/images/avatar.jpg" width="200" height="200" /></div>
+                        </div>
+                        <div class="col-lg-8 col-md-7 text-center text-md-start">
+                            <h2 class="h1 mt-2" data-aos="fade-left" data-aos-delay="0">Vusal Mammadli</h2>
+                            <p data-aos="fade-left" data-aos-delay="100">C# Developer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <h1 style="text-align:center">ADDING NEW TALENT PAGE</h1>
+    <br />
+    <br />
+    @using (Html.BeginForm("AddTalent", "Talent", FormMethod.Post))
+    {
+        <div class="form-group" style="width:40%; margin-left:30%; margin-right:30%; text-align:center">
+            <div>
+                @Html.TextBoxFor(x => x.TalentName, new { @class = "form-control", @placeholder = "Talent Name" })
+                @Html.ValidationMessageFor(x => x.TalentName, null, new { @class = "text-danger" })
+            </div>
+            <br />
+            <div>
+                @Html.TextAreaFor(x => x.TalentDetail, new { @class = "form-control", @placeholder = "Talent Detail" })
+                @Html.ValidationMessageFor(x => x.TalentDetail, null, new { @class = "text-danger" })
+            </div>
+            <br />
+            <div>
+                @Html.TextBoxFor(x => x.TalentPoint, new { @class = "form-control", @placeholder = "Talent Point out of 100" })
+                @Html.ValidationMessageFor(x => x.TalentPoint, null, new { @class = "text-danger" })
+            </div>
+            <br />
+            <button class="btn btn-info">Add Talent</button>
+        </div>
+    }
+    <br />
+    <script src="~/AdminLTE-3.0.4/TalentPage/scripts/bootstrap.bundle.min.js?ver=1.2.0"></script>
+    <script src="~/AdminLTE-3.0.4/TalentPage/scripts/aos.js?ver=1.2.0"></script>
+    <script src="~/AdminLTE-3.0.4/TalentPage/scripts/main.js?ver=1.2.0"></script>
+</body>
+</html>
+

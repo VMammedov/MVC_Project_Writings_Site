@@ -1,0 +1,40 @@
+﻿@model EntityLayer.Concrete.Category
+
+@{
+    ViewBag.Title = "AddCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<head>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+</head>
+
+<h1>New Category Adding Page</h1>
+<hr />
+
+@using (Html.BeginForm("AddCategory", "AdminCategory", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Category Name")
+        @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control", @id = "asd1" })
+        @Html.ValidationMessageFor(x => x.CategoryName)
+        <br /> <br />
+        @Html.Label("Category Description")
+        @Html.TextAreaFor(x => x.CategoryDescription, new { @class = "form-control", @id="asd" })
+        @Html.ValidationMessageFor(x => x.CategoryDescription)
+        <br /> <br />
+        <button class="btn btn-success" id="btnsave">Save</button>
+    </div>
+}
+
+<script>
+    $('#btnsave').click(function () {
+        if ($("#asd1").val() == "" || $("#asd").val() == "") {
+            swal("Ooops!", "Please Check Category Properties!", "error");
+        }
+        else {
+            swal("Good job!", "You have successfully save Category!", "success");
+        }
+    });
+</script>

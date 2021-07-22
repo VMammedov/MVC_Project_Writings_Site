@@ -1,0 +1,44 @@
+﻿@using EntityLayer.Concrete
+@model List<About>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<head>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+</head>
+
+<h2>About Data Page</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>About Heading</th>
+        <th>Be Active</th>
+        <th>Be Passive</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.AboutID</td>
+            <td>@item.AboutStatus</td>
+            <td><a href="/About/BeActive/@item.AboutID" class="btn btn-info" id="active">Be Active</a></td>
+            <td><a href="/About/BePassive/@item.AboutID" class="btn btn-warning" id="passive">Be Passive</a></td>
+        </tr>
+    }
+</table>
+@Html.Action("AboutPartial","About")
+
+<script>
+    $('#active').click(function () {
+        swal("Activated!", "Successfully Activated!", "success")
+    });
+</script>
+
+<script>
+    $('#passive').click(function () {
+        swal("Passived!", "Successfully Passived!", "success")
+    });
+</script>

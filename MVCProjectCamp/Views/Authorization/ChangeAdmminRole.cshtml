@@ -1,0 +1,26 @@
+﻿@model EntityLayer.Concrete.Admin
+
+@{
+    ViewBag.Title = "ChangeAdmminRole";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("ChangeAdmminRole", "Authorization", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.HiddenFor(x=>x.AdminID)
+        @Html.HiddenFor(x=>x.AdminPasswordHash)
+        @Html.HiddenFor(x=>x.AdminPasswordSalt)
+        @Html.HiddenFor(x=>x.UserName)
+        @Html.HiddenFor(x=>x.AdminStatus)
+        <br />
+        @Html.Label("Admin Role")
+        <select class="form-control" name="AdminRole" required>
+            <option style="color:indigo" value="A">A</option>
+            <option style="color:indigo" value="B">B</option>
+        </select>
+        <br />
+        <button class="btn btn-success">Update</button>
+    </div>
+}
+

@@ -1,0 +1,25 @@
+﻿@model EntityLayer.Concrete.Heading
+
+@{
+    ViewBag.Title = "NewHeading";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+<div style="text-align:center">
+    <h1>Let's Write A New Heading</h1>
+</div>
+<br />
+<div style="margin-left:25%; margin-right:25%; width:50%;">
+    @using (Html.BeginForm("NewHeading", "WriterPanel", FormMethod.Post))
+    {
+        <div class="form-group">
+            @Html.Label("Heading Name", new { @style = "font-size:1.4rem" })
+            @Html.TextBoxFor(x => x.HeadingName, new { @class = "form-control", @style = "border: 2px solid gray" })
+            @Html.ValidationMessageFor(x => x.HeadingName, null, new { @class = "text-danger" })
+            <br />
+            @Html.Label("Heading's Category", new { @style = "font-size:1.4rem" })
+            @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.vc, new { @class = "form-control", @style = "border: 2px solid gray" })
+            <br />
+            <div style="text-align:center"><button class="btn btn-info">Write Heading</button></div>
+        </div>
+    }
+</div>

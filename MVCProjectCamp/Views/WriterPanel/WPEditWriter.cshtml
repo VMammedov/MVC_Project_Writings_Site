@@ -1,0 +1,63 @@
+﻿@model EntityLayer.Concrete.Writer
+
+@{
+    ViewBag.Title = "WPEditWriter";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+<link href="~/WriterPanelTemplate/css/profilestyle.css" rel="stylesheet" id="bootstrap-css">
+
+<div class="container emp-profile">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="profile-img">
+                <img src="@Html.DisplayFor(x=>x.WriterImage)" alt="Profile Picture" />
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="profile-head">
+                <h5>
+                    @Html.DisplayFor(x => x.WriterName) @Html.DisplayFor(x => x.WriterSurName)
+                </h5>
+                <h6>
+                    @Html.DisplayFor(x => x.WriterTitle)
+                </h6>
+                <hr>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        @using (Html.BeginForm("WPEditWriter", "WriterPanel", FormMethod.Post, new { enctype = "multipart/form-data"}))
+        {
+            @Html.HiddenFor(x => x.WriterID)
+            @Html.HiddenFor(x => x.WriterPasswordHash)
+            @Html.HiddenFor(x => x.WriterPasswordSalt)
+            @Html.HiddenFor(x => x.WriterStatus)
+            @Html.Label("Name")
+            @Html.TextBoxFor(x => x.WriterName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.WriterName, null, new { @class = "text-danger" })
+            <br />
+            @Html.Label("SurName")
+            @Html.TextBoxFor(x => x.WriterSurName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.WriterSurName, null, new { @class = "text-danger" })
+            <br />
+            @Html.Label("Writer Title")
+            @Html.TextBoxFor(x => x.WriterTitle, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.WriterTitle, null, new { @class = "text-danger" })
+            <br />
+            @Html.Label("Email")
+            @Html.TextBoxFor(x => x.WriterMail, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.WriterMail, null, new { @class = "text-danger" })
+            <br />
+            @Html.Label("Profile Image")
+            <input type="file" name="WriterImage" class="form-control"/>
+            <br />
+            @Html.Label("About")
+            <br />
+            @Html.TextAreaFor(x => x.WriterAbout, new { @style = "resize:none; border:1px solid dodgerblue; border-radius:0.35rem; height:200px; width:90%" })
+            @Html.ValidationMessageFor(x => x.WriterAbout, null, new { @class = "text-danger" })
+            <div style="text-align:right"><button class="btn btn-success" type="submit">Save</button></div>
+        }
+    </div>
+</div>
+

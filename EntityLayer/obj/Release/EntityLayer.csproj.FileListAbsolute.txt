@@ -1,0 +1,12 @@
+C:\Users\Vusal Mammadli\source\repos\MVCProjectCamp\EntityLayer\bin\Release\EntityLayer.dll.config
+C:\Users\Vusal Mammadli\source\repos\MVCProjectCamp\EntityLayer\bin\Release\EntityLayer.dll
+C:\Users\Vusal Mammadli\source\repos\MVCProjectCamp\EntityLayer\bin\Release\EntityLayer.pdb
+C:\Users\Vusal Mammadli\source\repos\MVCProjectCamp\EntityLayer\bin\Release\EntityFramework.dll
+C:\Users\Vusal Mammadli\source\repos\MVCProjectCamp\EntityLayer\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Vusal Mammadli\source\repos\MVCProjectCamp\EntityLayer\bin\Release\EntityFramework.xml
+C:\Users\Vusal Mammadli\source\repos\MVCProjectCamp\EntityLayer\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Vusal Mammadli\source\repos\MVCProjectCamp\EntityLayer\obj\Release\EntityLayer.csprojAssemblyReference.cache
+C:\Users\Vusal Mammadli\source\repos\MVCProjectCamp\EntityLayer\obj\Release\EntityLayer.csproj.CoreCompileInputs.cache
+C:\Users\Vusal Mammadli\source\repos\MVCProjectCamp\EntityLayer\obj\Release\EntityLayer.csproj.CopyComplete
+C:\Users\Vusal Mammadli\source\repos\MVCProjectCamp\EntityLayer\obj\Release\EntityLayer.dll
+C:\Users\Vusal Mammadli\source\repos\MVCProjectCamp\EntityLayer\obj\Release\EntityLayer.pdb

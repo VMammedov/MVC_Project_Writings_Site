@@ -1,0 +1,43 @@
+﻿@using EntityLayer.Concrete
+
+@{
+    ViewBag.Title = "Index1";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<br />
+<h2 style="text-align:center">Statistics</h2>
+
+<br />
+<div style="display:flex; justify-content:space-between">
+    <div class="card text-white bg-primary mb-3" style="width: 20rem; height: 20rem">
+        <div class="card-header" style="font-size:medium">Toplam Kategori Sayısı</div>
+        <div class="card-body">
+            <p class="card-text" style="font-size:3rem; text-align:center">@ViewBag.d1</p>
+        </div>
+    </div>
+    <div class="card text-white bg-success mb-3" style="width: 20rem; height: 20rem">
+        <div class="card-header" style="font-size:medium">Başlık tablosunda "Programming" kategorisine ait başlık sayısı</div>
+        <div class="card-body">
+            <p class="card-text" style="font-size:3rem; text-align:center">@ViewBag.d2</p>
+        </div>
+    </div>
+    <div class="card text-white bg-danger mb-3" style="width: 20rem; height: 20rem">
+        <div class="card-header" style="font-size:medium">Yazar adında 'a' harfi geçen yazar sayısı</div>
+        <div class="card-body">
+            <p class="card-text" style="font-size:3rem; text-align:center">@ViewBag.d3</p>
+        </div>
+    </div>
+    <div class="card text-white bg-warning mb-3" style="width: 20rem; height: 20rem">
+        <div class="card-header" style="font-size:medium"> En fazla başlığa sahip kategori adı</div>
+        <div class="card-body">
+            <p class="card-text" style="font-size:2.5rem; text-align:center">@ViewBag.d4</p>
+        </div>
+    </div>
+    <div class="card text-white bg-info mb-3" style="width: 20rem; height: 20rem">
+        <div class="card-header" style="font-size:medium">Kategori tablosunda durumu true olan kategoriler ile false olan kategoriler arasındaki sayısal fark</div>
+        <div class="card-body">
+            <p class="card-text" style="font-size:3rem; text-align:center">@ViewBag.d5</p>
+        </div>
+    </div>   
+</div>
